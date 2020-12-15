@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+  {% extends 'base.html' %}
+  {% block title %}Home Page{% endblock %}
+  {% block content %}
+
+	<body>
+		<h1>
+			Search whatever you are looking for !
+		</h1>
+
+		<hr>
+		<hr>
+
+
+      <div class="jumbotron">
+		<form action="blocksearch" method="post">
+			<h5>Please specify what you are searching for :</h5>
+			<p><input type="text" name="querytype" > For Example: ("Movie","Actor","Genre")</></p>
+			<h5>Please put in the KEYWORD(s) you are looking for  :</h5>
+			<p><input type="text" name="keywordInput" /></p>
+			<p><input type="text" name="secondkeywordInput" /></p>
+
+			
+			<p><input type="submit" value=" START SEARCH "/></p>
+		</form>
+     </div>
+	
+
+	</body>
+	{% endblock %}
+</html>

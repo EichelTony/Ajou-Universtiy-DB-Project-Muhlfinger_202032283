@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>MovieBlockBusterTV</title>
+</head>
+
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+
+<body>
+<style>
+ 
+ td {
+        width: 200px;
+        text-align: center;
+        border: 3px solid black;
+        padding: 5px;
+      }
+</style>
+<h1>{{heading}}</h1>
+<table>
+  <thead>
+    <tr>
+        <th>CustomerID:</th>
+        <th>CountNumber:</th>
+        <th>Member since:</th>
+        <th>Movies orderd:</th>
+    </tr>
+    </thead>    
+    <tbody>
+     {% for row in data %}    
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+</body>
+{% endblock %}
+</html>

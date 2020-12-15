@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <style>
+    	h1 {
+		  color: darkblue;
+		  font-family: arial;
+		  font-size: 200%;
+		}
+		h2 {
+		  color: magenta;
+		  font-family: arial;
+		}
+
+		h3 {
+		  color: blue;
+		  font-family: arial;
+		}
+
+		p {
+		  color: orange;
+		  font-family: arial;
+		}
+ 
+ 		td {
+        width: 200px;
+        text-align: center;
+        font-family: arial;
+        border: 1px solid black;
+        padding: 4px;
+      	}
+      	th {
+      		text-align: left;
+      		font-family: arial;
+      	}
+
+		</style>
+</head>
+  {% extends 'base.html' %}
+  {% block title %}Home Page{% endblock %}
+  {% block content %}
+<body>
+		<h1>
+			Movie Theater 
+		</h1>
+		<hr>
+    	<hr>
+
+		<H2>
+			Now playing: {{leastMovie[0][1]}}
+		</H2>
+	 
+	<hr>
+		<center>
+		<img src="{{ user_image }}" class="centerImage" alt="Movie Preview" width="1080" height="600">
+		</center>
+	<hr>
+
+		<center>
+		<img src="{{ play_image }}" class="centerImage" alt="Play Preview" width="75" height="75">  
+		</center>
+	<hr>
+		<div class="relative">
+	        <h3 align="middle" >
+	            <a href=returnMovies ><button class="navitem">RETURN THE MOVIE</button></a>
+	        </h3>
+	    </div>
+
+	
+	<hr>
+	<hr>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }} </p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+</body>
+ {% endblock %}
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MovieBlockBusterTV</title>
+</head>
+
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+
+    <style>
+ 
+ td {
+        width: 200px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+
+<body>
+
+
+<h2>Profile Page </h2>
+<h4>for: {{ returnloggedinUser() }}</h4>
+<hr>
+
+
+<div>
+    <h5>Your customer information are below:</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name:</th>
+                <th>Last Name:</th>
+                <th>Adress:</th>
+                <th>City:</th>
+                <th>State:</th>
+                <th>ZipCode:</th>
+                <th>Telephone:</th>
+                <th>E-Mail:</th>
+                <th>CreditCard:</th>
+                <th>Rating:</th>
+            </tr>
+        </thead>    
+        
+        <tbody>
+            {% for row in customer %}    
+                <tr>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[6]}}</td>
+                    <td>{{row[7]}}</td>
+                    <td>{{row[8]}}</td>
+                    <td>{{row[10]}}</td>
+                    <td>{{row[11]}}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<hr>
+<hr>
+
+</body>
+{% endblock %}
+</html>
+
+<!--
+    <h2>Profile Page</h2>
+<div>
+    <p>Your account details are below:</p>
+    <table>
+        <tr>
+            <td>CustomerID:</td>
+            <td>{{ account[0][0] }}</td>
+        </tr>
+        <tr>
+            <td>AccountNumber:</td>
+            <td>{{ account[0][1] }}</td>
+        </tr>
+        <tr>
+            <td>Type of Membership:</td>
+            <td>{{ account[0][2] }}</td>
+        </tr>
+        <tr>
+            <td>Creation Date:</td>
+            <td>{{ account[0][3] }}</td>
+        </tr>
+    </table>
+</div>
+
+<hr>
+<hr>
+<hr>
+
+<div>
+    <h5>Your account details are below:</h5>
+    <table>
+      <thead>
+        <tr>
+            <th>CustomerID:</th>
+            <th>AccountNumber:</th>
+            <th>Type of Membership:</th>
+            <th>Creation Date:</th>
+            <th>Movies rented:</th>
+        </tr>
+        </thead>  
+
+        <tbody>
+            {% for row in account %}    
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[3]}}</td>
+                    <td>{{row[4]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

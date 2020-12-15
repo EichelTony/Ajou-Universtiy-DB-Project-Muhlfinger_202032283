@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title></title>
+</head>
+
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block content %}
+
+
+<body>
+<style>
+ 
+ td {
+        width: 200px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+      }
+</style>
+<h1>{{heading}}</h1>
+
+      <div class="jumbotron">
+        <form action="blocksearch" method="post">
+
+<table>
+  <thead>
+    <tr>
+        <th>{{column[0]}}</th>
+        <th>{{column[1]}}</th>
+        <th>{{column[2]}}</th>
+    </tr>
+    </thead>    
+    <tbody>
+     {% for row in data %}    
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+            </form>
+        </div>
+<hr>
+<hr>
+
+<h1>{{column[6]}}</h1>
+
+      <div class="jumbotron">
+        <form action="blocksearch" method="post">
+
+
+<table>
+  <thead>
+    <tr>
+        <th>{{column[3]}}</th>
+        <th>{{column[4]}}</th>
+        <th>{{column[5]}}</th>
+    </tr>
+    </thead>    
+    <tbody>
+     {% for row in data_extended %}    
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        
+
+            </form>
+        </div>
+<hr>
+<hr>
+
+</body>
+{% endblock %}
+</html>
